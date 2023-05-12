@@ -11,8 +11,11 @@ footer: "ECL 2.0 Licensed | Copyright © [2023] [Нежурко Тимур Юрi
 **Виконав(-ла):** 
 
 *студент 2-го курсу, групи IO-14*<span padding-right:5em></span> [Нежурко Тимур Юрiйович](http://t.me/KotTacion)
+
 *студент 2-го курсу, групи IO-14*<span padding-right:5em></span> [Куравський Олексій Віталійович](https://t.me/IQ_KaK_y_XLebuLLIKa)
+
 *студент 2-го курсу, групи IO-14*<span padding-right:5em></span> [Забара Ярослав Юрійович](https://t.me/n_g_g_y_u1)
+
 *студент 2-го курсу, групи IO-14*<span padding-right:5em></span> [Кобзін Микола Володимирович](https://t.me/kolia_kobzin)
 
 
