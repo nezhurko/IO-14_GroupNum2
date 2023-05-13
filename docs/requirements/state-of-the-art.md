@@ -44,7 +44,7 @@
 
 У широкому розумінні йдеться про період від моменту створення інформації та до моменту її повного зникнення в оригінальному вигляді
 
-![](https://github.com/nezhurko/IO-14_GroupNum2/blob/master/docs/requirements/media/data-life-cycle.png?raw=true)
+![](https://cdn.discordapp.com/attachments/512316284763897884/1107073913558679643/data-life-cycle.png)
 
 Життєвий цикл даних може мати такі етапи:
   -	Збір 
@@ -57,7 +57,7 @@
   -	Сповіщення 
   -	Запит
 
-![](https://github.com/nezhurko/IO-14_GroupNum2/blob/master/docs/requirements/media/data-life-cycle2.png?raw=true)
+![](https://raw.githubusercontent.com/nezhurko/IO-14_GroupNum2/master/docs/requirements/media/data-life-cycle2.png)
 
 <b>Збір</b> – є першим етапом життєвого циклу та передбачає декілька підходів. Інформація може бути зібрана безпосередньо від джерела (прямий) або від третьої особи (не прямий)
 
