@@ -93,7 +93,10 @@ module.exports = {
     // editLinks: true,
     // custom text for edit link. Defaults to "Edit this page"
     // editLinkText: 'Ви можете покращити цю сторінку'
-
+	home: true, 
+    actionText: 'Розпочати →', 
+    actionLink: '/intro/',
+    footer: "ECL 2.0 Licensed | Copyright © [2023]"
   },
   title: 'Система управління відкритими даними',
   description: 'Лабораторні роботи з дисципліни "Організація баз даних"',
