@@ -1,10 +1,9 @@
-
 ---
 home: true
 actionText: Розпочати →
 actionLink: /intro/
 
-footer: "ECL 2.0 Licensed | Copyright © [2023] [Нежурко Тимур Юрiйович, Куравський Олексій Віталійович, Забара Ярослав Юрійович, Кобзін Микола Володимирович]"
+footer: "ECL 2.0 Licensed | Copyright © [2023] [Реу Дар'я]"
 ---
 
 
