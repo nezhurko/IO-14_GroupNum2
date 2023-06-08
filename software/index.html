@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>SQL-скрипт для створення на початкового наповнення бази даних | Система управління відкритими даними</title>
+    <meta name="generator" content="VuePress 1.9.5">
+    <link rel="icon" href="/IO-14_GroupNum2/favicon.ico">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.5.1/katex.min.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <meta name="description" content="Лабораторні роботи з дисципліни &quot;Організація баз даних&quot;">
+    
+    <link rel="preload" href="/IO-14_GroupNum2/assets/css/0.styles.610d4d4b.css" as="style"><link rel="preload" href="/IO-14_GroupNum2/assets/js/app.a681592d.js" as="script"><link rel="preload" href="/IO-14_GroupNum2/assets/js/2.d674a461.js" as="script"><link rel="preload" href="/IO-14_GroupNum2/assets/js/22.957d68a2.js" as="script"><link rel="prefetch" href="/IO-14_GroupNum2/assets/js/10.17dc7fc0.js"><link rel="prefetch" href="/IO-14_GroupNum2/assets/js/11.32ba2003.js"><link rel="prefetch" href="/IO-14_GroupNum2/assets/js/12.f4d805b2.js"><link rel="prefetch" href="/IO-14_GroupNum2/assets/js/13.b369ab95.js"><link rel="prefetch" href="/IO-14_GroupNum2/assets/js/14.4fd45c58.js"><link rel="prefetch" href="/IO-14_GroupNum2/assets/js/15.d1b2d61e.js"><link rel="prefetch" href="/IO-14_GroupNum2/assets/js/16.af900f68.js"><link rel="prefetch" href="/IO-14_GroupNum2/assets/js/17.3fe184c5.js"><link rel="prefetch" href="/IO-14_GroupNum2/assets/js/18.d8070267.js"><link rel="prefetch" href="/IO-14_GroupNum2/assets/js/19.53f9c669.js"><link rel="prefetch" href="/IO-14_GroupNum2/assets/js/20.ee9acc98.js"><link rel="prefetch" href="/IO-14_GroupNum2/assets/js/21.af7f2682.js"><link rel="prefetch" href="/IO-14_GroupNum2/assets/js/23.66186558.js"><link rel="prefetch" href="/IO-14_GroupNum2/assets/js/24.fdafa87a.js"><link rel="prefetch" href="/IO-14_GroupNum2/assets/js/25.2d43caa3.js"><link rel="prefetch" href="/IO-14_GroupNum2/assets/js/26.2b7d224e.js"><link rel="prefetch" href="/IO-14_GroupNum2/assets/js/3.33d6b42d.js"><link rel="prefetch" href="/IO-14_GroupNum2/assets/js/4.5d00dd71.js"><link rel="prefetch" href="/IO-14_GroupNum2/assets/js/5.4b8fb81c.js"><link rel="prefetch" href="/IO-14_GroupNum2/assets/js/6.19d66de0.js"><link rel="prefetch" href="/IO-14_GroupNum2/assets/js/7.3906f7a7.js"><link rel="prefetch" href="/IO-14_GroupNum2/assets/js/8.e8761b22.js"><link rel="prefetch" href="/IO-14_GroupNum2/assets/js/9.c0a843c2.js">
+    <link rel="stylesheet" href="/IO-14_GroupNum2/assets/css/0.styles.610d4d4b.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container"><header class="navbar"><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/IO-14_GroupNum2/" class="home-link router-link-active"><!----> <span class="site-name">Система управління відкритими даними</span></a> <div class="links"><div class="search-box"><input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <nav class="nav-links can-hide"><div class="nav-item"><a href="/IO-14_GroupNum2/" class="nav-link">
+  Початок
+</a></div> <a href="https://github.com/nezhurko/IO-14_GroupNum2" target="_blank" rel="noopener noreferrer" class="repo-link">
+    Github
+    <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></nav></div></header> <div class="sidebar-mask"></div> <aside class="sidebar"><nav class="nav-links"><div class="nav-item"><a href="/IO-14_GroupNum2/" class="nav-link">
+  Початок
+</a></div> <a href="https://github.com/nezhurko/IO-14_GroupNum2" target="_blank" rel="noopener noreferrer" class="repo-link">
+    Github
+    <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></nav>  <ul class="sidebar-links"><li><a href="/IO-14_GroupNum2/intro/" class="sidebar-link">Вступ</a></li><li><section class="sidebar-group collapsable depth-0"><a href="/IO-14_GroupNum2/requirements/" class="sidebar-heading clickable"><span>Розроблення загальних вимог до системи</span> <span class="arrow right"></span></a> <!----></section></li><li><a href="/IO-14_GroupNum2/use%20cases/" class="sidebar-link">Розроблення вимог до функціональности системи</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/IO-14_GroupNum2/use%20cases/#діаграма-прецендентів" class="sidebar-link">Діаграма прецендентів</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/IO-14_GroupNum2/use%20cases/#usecases-для-гостя" class="sidebar-link">Usecases для гостя</a></li><li class="sidebar-sub-header"><a href="/IO-14_GroupNum2/use%20cases/#usecases-для-користувача" class="sidebar-link">Usecases для користувача</a></li><li class="sidebar-sub-header"><a href="/IO-14_GroupNum2/use%20cases/#usecases-для-адміністратора" class="sidebar-link">Usecases для адміністратора</a></li><li class="sidebar-sub-header"><a href="/IO-14_GroupNum2/use%20cases/#сценаріі" class="sidebar-link">Сценарії</a></li><li class="sidebar-sub-header"><a href="/IO-14_GroupNum2/use%20cases/#користувач" class="sidebar-link">Користувач</a></li><li class="sidebar-sub-header"><a href="/IO-14_GroupNum2/use%20cases/#адміністратор" class="sidebar-link">Адміністратор</a></li></ul></li></ul></li><li><a href="/IO-14_GroupNum2/design/" class="sidebar-link">Проектування інформаційного забезпечення</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/IO-14_GroupNum2/design/#модель-бізнес-об-єктів" class="sidebar-link">Модель бізнес-об'єктів</a></li><li class="sidebar-sub-header"><a href="/IO-14_GroupNum2/design/#реляціина-схема" class="sidebar-link">Реляційна схема</a></li></ul></li><li><a href="/IO-14_GroupNum2/software/" aria-current="page" class="active sidebar-link">Реалізація інформаційного та програмного забезпечення</a></li><li><a href="/IO-14_GroupNum2/test/" class="sidebar-link">Тестування працездатності системи</a><ul class="sidebar-sub-headers"></ul></li><li><a href="/IO-14_GroupNum2/conclusion/" class="sidebar-link">Висновки</a></li></ul> </aside> <main class="page"> <div class="theme-default-content content__default"><h1 id="sql-скрипт-для-створення-на-початкового-наповнення-бази-даних"><a href="#sql-скрипт-для-створення-на-початкового-наповнення-бази-даних" class="header-anchor">#</a> SQL-скрипт для створення на початкового наповнення бази даних</h1> <div class="language-mysql extra-class"><pre class="language-text"><code>-- MySQL Script generated by MySQL Workbench
+-- Wed May 24 02:20:49 2023
+-- Model: New Model    Version: 1.0
+-- MySQL Workbench Forward Engineering
+
+SET @OLD_UNIQUE_CHECKS=@@UNIQUE_CHECKS, UNIQUE_CHECKS=0;
+SET @OLD_FOREIGN_KEY_CHECKS=@@FOREIGN_KEY_CHECKS, FOREIGN_KEY_CHECKS=0;
+SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='ONLY_FULL_GROUP_BY,STRICT_TRANS_TABLES,NO_ZERO_IN_DATE,NO_ZERO_DATE,ERROR_FOR_DIVISION_BY_ZERO,NO_ENGINE_SUBSTITUTION';
+
+-- -----------------------------------------------------
+-- Schema mydb
+-- -----------------------------------------------------
+DROP SCHEMA IF EXISTS `mydb` ;
+
+-- -----------------------------------------------------
+-- Schema mydb
+-- -----------------------------------------------------
+CREATE SCHEMA IF NOT EXISTS `mydb` DEFAULT CHARACTER SET utf8 ;
+USE `mydb` ;
+
+-- -----------------------------------------------------
+-- Table `mydb`.`Role`
+-- -----------------------------------------------------
+DROP TABLE IF EXISTS `mydb`.`Role` ;
+
+CREATE TABLE IF NOT EXISTS `mydb`.`Role` (
+  `id` INT NOT NULL AUTO_INCREMENT,
+  `name` VARCHAR(45) NOT NULL,
+  PRIMARY KEY (`id`))
+ENGINE = InnoDB;
+
+
+-- -----------------------------------------------------
+-- Table `mydb`.`User`
+-- -----------------------------------------------------
+DROP TABLE IF EXISTS `mydb`.`User` ;
+
+CREATE TABLE IF NOT EXISTS `mydb`.`User` (
+  `id` INT NOT NULL AUTO_INCREMENT,
+  `email` VARCHAR(45) NOT NULL,
+  `name` VARCHAR(45) NOT NULL,
+  `password` VARCHAR(45) NOT NULL,
+  `blocked` TINYINT NOT NULL DEFAULT 0,
+  `UserRole_ManyToOne_id_role` INT NOT NULL,
+  PRIMARY KEY (`id`, `UserRole_ManyToOne_id_role`),
+  CONSTRAINT `fk_User_Role`
+    FOREIGN KEY (`UserRole_ManyToOne_id_role`)
+    REFERENCES `mydb`.`Role` (`id`)
+    ON DELETE NO ACTION
+    ON UPDATE NO ACTION)
+ENGINE = InnoDB;
+
+CREATE INDEX `fk_User_Role_idx` ON `mydb`.`User` (`UserRole_ManyToOne_id_role` ASC) VISIBLE;
+
+
+-- -----------------------------------------------------
+-- Table `mydb`.`Permission`
+-- -----------------------------------------------------
+DROP TABLE IF EXISTS `mydb`.`Permission` ;
+
+CREATE TABLE IF NOT EXISTS `mydb`.`Permission` (
+  `id` INT NOT NULL AUTO_INCREMENT,
+  `name` VARCHAR(45) NOT NULL,
+  PRIMARY KEY (`id`))
+ENGINE = InnoDB;
+
+
+-- -----------------------------------------------------
+-- Table `mydb`.`Role_has_Permission`
+-- -----------------------------------------------------
+DROP TABLE IF EXISTS `mydb`.`Role_has_Permission` ;
+
+CREATE TABLE IF NOT EXISTS `mydb`.`Role_has_Permission` (
+  `Role_id` INT NOT NULL AUTO_INCREMENT,
+  `Permission_id` INT NOT NULL,
+  PRIMARY KEY (`Role_id`, `Permission_id`),
+  CONSTRAINT `fk_Role_has_Permission_Role1`
+    FOREIGN KEY (`Role_id`)
+    REFERENCES `mydb`.`Role` (`id`)
+    ON DELETE NO ACTION
+    ON UPDATE NO ACTION,
+  CONSTRAINT `fk_Role_has_Permission_Permission1`
+    FOREIGN KEY (`Permission_id`)
+    REFERENCES `mydb`.`Permission` (`id`)
+    ON DELETE NO ACTION
+    ON UPDATE NO ACTION)
+ENGINE = InnoDB;
+
+CREATE INDEX `fk_Role_has_Permission_Permission1_idx` ON `mydb`.`Role_has_Permission` (`Permission_id` ASC) VISIBLE;
+
+CREATE INDEX `fk_Role_has_Permission_Role1_idx` ON `mydb`.`Role_has_Permission` (`Role_id` ASC) VISIBLE;
+
+
+-- -----------------------------------------------------
+-- Table `mydb`.`Category`
+-- -----------------------------------------------------
+DROP TABLE IF EXISTS `mydb`.`Category` ;
+
+CREATE TABLE IF NOT EXISTS `mydb`.`Category` (
+  `id` INT NOT NULL AUTO_INCREMENT,
+  `name` VARCHAR(45) NOT NULL,
+  PRIMARY KEY (`id`))
+ENGINE = InnoDB;
+
+
+-- -----------------------------------------------------
+-- Table `mydb`.`Data`
+-- -----------------------------------------------------
+DROP TABLE IF EXISTS `mydb`.`Data` ;
+
+CREATE TABLE IF NOT EXISTS `mydb`.`Data` (
+  `id` INT NOT NULL AUTO_INCREMENT,
+  `name` VARCHAR(60) NOT NULL,
+  `description` VARCHAR(200) NOT NULL,
+  `content` BLOB NULL,
+  `date_creation` DATETIME NOT NULL,
+  `blocked` TINYINT NOT NULL DEFAULT 1,
+  `DataCategory_ManyToOne_CategoryId` INT NOT NULL,
+  `Creator` INT NOT NULL,
+  PRIMARY KEY (`id`, `DataCategory_ManyToOne_CategoryId`, `Creator`),
+  CONSTRAINT `fk_Data_Category1`
+    FOREIGN KEY (`DataCategory_ManyToOne_CategoryId`)
+    REFERENCES `mydb`.`Category` (`id`)
+    ON DELETE NO ACTION
+    ON UPDATE NO ACTION,
+  CONSTRAINT `fk_Data_User1`
+    FOREIGN KEY (`Creator`)
+    REFERENCES `mydb`.`User` (`id`)
+    ON DELETE NO ACTION
+    ON UPDATE NO ACTION)
+ENGINE = InnoDB;
+
+CREATE INDEX `fk_Data_Category1_idx` ON `mydb`.`Data` (`DataCategory_ManyToOne_CategoryId` ASC) VISIBLE;
+
+CREATE INDEX `fk_Data_User1_idx` ON `mydb`.`Data` (`Creator` ASC) VISIBLE;
+
+
+-- -----------------------------------------------------
+-- Table `mydb`.`ChangeData`
+-- -----------------------------------------------------
+DROP TABLE IF EXISTS `mydb`.`ChangeData` ;
+
+CREATE TABLE IF NOT EXISTS `mydb`.`ChangeData` (
+  `id` INT NOT NULL AUTO_INCREMENT,
+  `old_content` BLOB NULL,
+  `new_content` BLOB NULL,
+  `Data_id` INT NOT NULL,
+  `Data_DataCategory_ManyToOne_CategoryId` INT NOT NULL,
+  `Data_Creator` INT NOT NULL,
+  `EditorUser_id` INT NOT NULL,
+  PRIMARY KEY (`id`, `Data_id`, `Data_DataCategory_ManyToOne_CategoryId`, `Data_Creator`, `EditorUser_id`),
+  CONSTRAINT `fk_ChangeData_Data1`
+    FOREIGN KEY (`Data_id` , `Data_DataCategory_ManyToOne_CategoryId` , `Data_Creator`)
+    REFERENCES `mydb`.`Data` (`id` , `DataCategory_ManyToOne_CategoryId` , `Creator`)
+    ON DELETE NO ACTION
+    ON UPDATE NO ACTION,
+  CONSTRAINT `fk_ChangeData_User1`
+    FOREIGN KEY (`EditorUser_id`)
+    REFERENCES `mydb`.`User` (`id`)
+    ON DELETE NO ACTION
+    ON UPDATE NO ACTION)
+ENGINE = InnoDB;
+
+CREATE INDEX `fk_ChangeData_Data1_idx` ON `mydb`.`ChangeData` (`Data_id` ASC, `Data_DataCategory_ManyToOne_CategoryId` ASC, `Data_Creator` ASC) VISIBLE;
+
+CREATE INDEX `fk_ChangeData_User1_idx` ON `mydb`.`ChangeData` (`EditorUser_id` ASC) VISIBLE;
+
+
+SET SQL_MODE=@OLD_SQL_MODE;
+SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS;
+SET UNIQUE_CHECKS=@OLD_UNIQUE_CHECKS;
+
+SET SQL_MODE=@OLD_SQL_MODE;
+SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS;
+SET UNIQUE_CHECKS=@OLD_UNIQUE_CHECKS;
+
+
+START TRANSACTION;
+USE `mydb`;
+
+-- Default 
+INSERT INTO `mydb`.`Permission` (`id`, `name`) VALUES (DEFAULT, 'create');
+INSERT INTO `mydb`.`Permission` (`id`, `name`) VALUES (DEFAULT, 'read');
+INSERT INTO `mydb`.`Permission` (`id`, `name`) VALUES (DEFAULT, 'delete');
+
+INSERT INTO `mydb`.`Role` (`id`, `name`) VALUES (DEFAULT, 'admin');
+INSERT INTO `mydb`.`Role` (`id`, `name`) VALUES (DEFAULT, 'user');
+INSERT INTO `mydb`.`Role` (`id`, `name`) VALUES (DEFAULT, 'guest');
+
+INSERT INTO `mydb`.`User` (`id`, `email`, `name`, `password`, `blocked`,`UserRole_ManyToOne_id_role`) VALUES (DEFAULT, 'example@gmail.com', 'Kirya Korneplod', '1111', '0', '1');
+
+-- Categories Data
+INSERT INTO `mydb`.`Category` (`name`) VALUES ('Tech');
+INSERT INTO `mydb`.`Category` (`name`) VALUES ('Lifestyle');
+INSERT INTO `mydb`.`Category` (`name`) VALUES ('Sports');
+INSERT INTO `mydb`.`Category` (`name`) VALUES ('Entertainment');
+INSERT INTO `mydb`.`Category` (`name`) VALUES ('Health');
+
+-- Posts data
+INSERT INTO `mydb`.`Data` (`name`, `description`, `content`, `date_creation`, `blocked`, `DataCategory_ManyToOne_CategoryId`, `Creator`) VALUES 
+('Tech Article 1', 'An article on AI technology', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit...', NOW(), '0', '1', '1'),
+('Tech Article 2', 'An article on Quantum Computing', 'Vestibulum ante ipsum primis in faucibus orci...', NOW(), '0', '1', '1'),
+('Lifestyle Article 1', 'An article on Vegan Lifestyle', 'Pellentesque dignissim odio sit amet mi aliquam, quis...', NOW(), '0', '2', '1'),
+('Lifestyle Article 2', 'An article on Minimalist Living', 'Etiam non tellus ex. Nullam tempus vulputate...', NOW(), '0', '2', '1'),
+('Sports Article 1', 'An article on the upcoming World Cup', 'Fusce accumsan ultricies massa, a tincidunt...', NOW(), '0', '3', '1'),
+('Sports Article 2', 'An article on the impact of sports on mental health', 'Phasellus facilisis fermentum mollis...', NOW(), '0', '3', '1'),
+('Entertainment Article 1', 'An article on the impact of streaming services on traditional television', 'Mauris ultrices ligula at ultricies semper...', NOW(), '0', '4', '1'),
+('Entertainment Article 2', 'An article on the rise of K-pop', 'Cras imperdiet massa nec justo sollicitudin...', NOW(), '0', '4', '1'),
+('Health Article 1', 'An article on maintaining mental health during the pandemic', 'Praesent blandit erat nec mauris sollicitudin...', NOW(), '0', '5', '1'),
+('Health Article 2', 'An article on the benefits of Yoga', 'Proin vitae dolor sit amet odio...', NOW(), '0', '5', '1');
+UPDATE `mydb`.`Data` SET `blocked` = '1' WHERE `id` = 1;
+
+-- User data
+INSERT INTO `mydb`.`User` 
+(`email`, `name`, `password`, `blocked`, `UserRole_ManyToOne_id_role`)
+VALUES 
+('test_user1@gmail.com', 'User One', 'pass1', 0, 2),
+('test_user2@gmail.com', 'User Two', 'pass2', 0, 2),
+('test_user3@gmail.com', 'User Three', 'pass3', 0, 2),
+('test_user4@gmail.com', 'User Four', 'pass4', 1, 2),
+('test_user5@gmail.com', 'User Five', 'pass5', 1, 2),
+('admin1@gmail.com', 'Admin One', 'admin1', 0, 1),
+('admin2@gmail.com', 'Admin Two', 'admin2', 0, 1);
+
+
+COMMIT;
+</code></pre></div></div> <footer class="page-edit"><!----> <div class="last-updated"><span class="prefix">Останнє оновлення:</span> <span class="time">6/8/2023, 12:21:29 PM</span></div></footer> <div class="page-nav"><p class="inner"><span class="prev">
+      ←
+      <a href="/IO-14_GroupNum2/design/" class="prev">
+        Проектування інформаційного забезпечення
+      </a></span> <span class="next"><a href="/IO-14_GroupNum2/test/">
+        Тестування працездатності системи
+      </a>
+      →
+    </span></p></div> </main></div><div class="global-ui"><!----></div></div>
+    <script src="/IO-14_GroupNum2/assets/js/app.a681592d.js" defer></script><script src="/IO-14_GroupNum2/assets/js/2.d674a461.js" defer></script><script src="/IO-14_GroupNum2/assets/js/22.957d68a2.js" defer></script>
+  </body>
+</html>
