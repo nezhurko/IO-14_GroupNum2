@@ -1,7 +1,7 @@
 # Проєктування бази даних
 
 ## Модель бізнес-об'єктів 
-<img src="./media/modelBO.png">
+<img src="https://cdn.discordapp.com/attachments/512316284763897884/1116176886557589576/modelBO.png">
 ## ER-модель
 @startuml
 
@@ -53,4 +53,4 @@
 @enduml
 
 ## Реляційна схема
-<img src="./media/relyatciyna_shema.png">
+<img src="https://cdn.discordapp.com/attachments/512316284763897884/1116176914835583016/relyatciyna_shema.png">
