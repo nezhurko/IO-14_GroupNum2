@@ -1,4 +1,32 @@
 # Тестування працездатності системи
 
-*В цьому розділі необхідно вказати засоби тестування, навести вихідні коди тестів та результати тестування.*
+### GUEST_AUTHORIZATION
+![](USER_AUTHORIZATION.png)
+![](USER_AUTHORIZATION_ERROR.png)
 
+### GUEST_REGISTRATION
+![](USER_REGISTRATION.png)
+
+### GUEST_VIEW
+![](GUEST_VIEW.png)
+
+### USER_GENERATE_TABLE
+![](USER_GENERATE_TABLE.png)
+
+### USER_ADD_DATA
+![](USER_ADD_DATA.png)
+
+### USER_CHANGE_DATA
+![](USER_UPDATE_DATA.png)
+![](USER_UPDATE_DATA_ERROR_PROOF.png)
+
+### ADM_DELETE_DATA
+![](ADMIN_DELETE_DATA.png)
+![](ADMIN_DELETE_DATA_PERMISSIONERROR_PROOF.png)
+
+### ADM_BLOCK_USER
+![](ADMIN_BLOCK_USER.png)
+![](ADMIN_BLOCK_USER_PERMISSIONERROR_PROOF.png)
+
+### ADM_MAKE_NEWADM
+![](ADMIN_MAKE_NEWADMIN.png)
