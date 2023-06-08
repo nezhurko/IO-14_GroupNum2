@@ -191,6 +191,26 @@ INSERT INTO `mydb`.`Role` (`id`, `name`) VALUES (DEFAULT, 'guest');
 
 INSERT INTO `mydb`.`User` (`id`, `email`, `name`, `password`, `blocked`,`UserRole_ManyToOne_id_role`) VALUES (DEFAULT, 'example@gmail.com', 'Kirya Korneplod', '1111', '0', '1');
 
+INSERT INTO `mydb`.`Category` (`name`) VALUES ('Tech');
+INSERT INTO `mydb`.`Category` (`name`) VALUES ('Lifestyle');
+INSERT INTO `mydb`.`Category` (`name`) VALUES ('Sports');
+INSERT INTO `mydb`.`Category` (`name`) VALUES ('Entertainment');
+INSERT INTO `mydb`.`Category` (`name`) VALUES ('Health');
+
+INSERT INTO `mydb`.`Data` (`name`, `description`, `content`, `date_creation`, `blocked`, `DataCategory_ManyToOne_CategoryId`, `Creator`) VALUES 
+('Tech Article 1', 'An article on AI technology', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit...', NOW(), '0', '1', '1'),
+('Tech Article 2', 'An article on Quantum Computing', 'Vestibulum ante ipsum primis in faucibus orci...', NOW(), '0', '1', '1'),
+('Lifestyle Article 1', 'An article on Vegan Lifestyle', 'Pellentesque dignissim odio sit amet mi aliquam, quis...', NOW(), '0', '2', '1'),
+('Lifestyle Article 2', 'An article on Minimalist Living', 'Etiam non tellus ex. Nullam tempus vulputate...', NOW(), '0', '2', '1'),
+('Sports Article 1', 'An article on the upcoming World Cup', 'Fusce accumsan ultricies massa, a tincidunt...', NOW(), '0', '3', '1'),
+('Sports Article 2', 'An article on the impact of sports on mental health', 'Phasellus facilisis fermentum mollis...', NOW(), '0', '3', '1'),
+('Entertainment Article 1', 'An article on the impact of streaming services on traditional television', 'Mauris ultrices ligula at ultricies semper...', NOW(), '0', '4', '1'),
+('Entertainment Article 2', 'An article on the rise of K-pop', 'Cras imperdiet massa nec justo sollicitudin...', NOW(), '0', '4', '1'),
+('Health Article 1', 'An article on maintaining mental health during the pandemic', 'Praesent blandit erat nec mauris sollicitudin...', NOW(), '0', '5', '1'),
+('Health Article 2', 'An article on the benefits of Yoga', 'Proin vitae dolor sit amet odio...', NOW(), '0', '5', '1');
+UPDATE `mydb`.`Data` SET `blocked` = '1' WHERE `id` = 1;
+
+
 
 COMMIT;
 ```
