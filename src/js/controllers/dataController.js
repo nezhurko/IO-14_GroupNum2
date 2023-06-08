@@ -105,7 +105,7 @@ export const updateData = (req, res) => {
   const forbiddenTables = ['User', 'Role', 'Permission', 'Role_has_Permission', 'Category', 'Data', 'ChangeData'];
 
   if (!userId) {
-    return res.status(401).send({ message: 'NOT_AUTHORIZED' });
+    return res.status(401).send({ message: 'Not Authorized' });
   }
 
   checkUserBlocked(userId, (error, results) => {
