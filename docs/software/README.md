@@ -181,6 +181,7 @@ SET UNIQUE_CHECKS=@OLD_UNIQUE_CHECKS;
 START TRANSACTION;
 USE `mydb`;
 
+-- Default 
 INSERT INTO `mydb`.`Permission` (`id`, `name`) VALUES (DEFAULT, 'create');
 INSERT INTO `mydb`.`Permission` (`id`, `name`) VALUES (DEFAULT, 'read');
 INSERT INTO `mydb`.`Permission` (`id`, `name`) VALUES (DEFAULT, 'delete');
@@ -191,12 +192,14 @@ INSERT INTO `mydb`.`Role` (`id`, `name`) VALUES (DEFAULT, 'guest');
 
 INSERT INTO `mydb`.`User` (`id`, `email`, `name`, `password`, `blocked`,`UserRole_ManyToOne_id_role`) VALUES (DEFAULT, 'example@gmail.com', 'Kirya Korneplod', '1111', '0', '1');
 
+-- Categories Data
 INSERT INTO `mydb`.`Category` (`name`) VALUES ('Tech');
 INSERT INTO `mydb`.`Category` (`name`) VALUES ('Lifestyle');
 INSERT INTO `mydb`.`Category` (`name`) VALUES ('Sports');
 INSERT INTO `mydb`.`Category` (`name`) VALUES ('Entertainment');
 INSERT INTO `mydb`.`Category` (`name`) VALUES ('Health');
 
+-- Posts data
 INSERT INTO `mydb`.`Data` (`name`, `description`, `content`, `date_creation`, `blocked`, `DataCategory_ManyToOne_CategoryId`, `Creator`) VALUES 
 ('Tech Article 1', 'An article on AI technology', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit...', NOW(), '0', '1', '1'),
 ('Tech Article 2', 'An article on Quantum Computing', 'Vestibulum ante ipsum primis in faucibus orci...', NOW(), '0', '1', '1'),
@@ -210,6 +213,17 @@ INSERT INTO `mydb`.`Data` (`name`, `description`, `content`, `date_creation`, `b
 ('Health Article 2', 'An article on the benefits of Yoga', 'Proin vitae dolor sit amet odio...', NOW(), '0', '5', '1');
 UPDATE `mydb`.`Data` SET `blocked` = '1' WHERE `id` = 1;
 
+-- User data
+INSERT INTO `mydb`.`User` 
+(`email`, `name`, `password`, `blocked`, `UserRole_ManyToOne_id_role`)
+VALUES 
+('test_user1@gmail.com', 'User One', 'pass1', 0, 2),
+('test_user2@gmail.com', 'User Two', 'pass2', 0, 2),
+('test_user3@gmail.com', 'User Three', 'pass3', 0, 2),
+('test_user4@gmail.com', 'User Four', 'pass4', 1, 2),
+('test_user5@gmail.com', 'User Five', 'pass5', 1, 2),
+('admin1@gmail.com', 'Admin One', 'admin1', 0, 1),
+('admin2@gmail.com', 'Admin Two', 'admin2', 0, 1);
 
 
 COMMIT;
